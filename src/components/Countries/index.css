@@ -1,0 +1,23 @@
+.content {
+    background-color: #96C9F4;
+    padding-bottom: 75px;
+}
+
+.countries {
+    display: flex;
+    gap: 40px;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    margin: 0px 5%;
+    justify-content: center;
+}
+
+.countriestitle {
+    text-align: center;
+    color: white;
+}
+
+.country:hover {
+    transform: scale(1.05);
+
+}

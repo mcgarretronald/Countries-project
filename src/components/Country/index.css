@@ -1,0 +1,44 @@
+.countryheader {
+
+    display: flex;
+    background-color: #96C9F4;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.countryheader section {
+    padding: 10px;
+
+
+
+}
+
+.countryheader img {
+    height: 100px;
+
+
+
+}
+
+.name {
+    text-align: center;
+
+}
+
+.information h3 {
+    font-weight: 400;
+}
+
+.country-details{
+    margin: 5% 2%;
+    display: grid;
+    grid-template-columns: 70% auto;
+
+}
+
+.neighbors {
+    border: solid;
+    position: absolute;
+    right: 20px;
+    padding: 10px;
+}
