@@ -34,6 +34,8 @@ function Continent() {
                 <div className="countries">
                     {countries.filter(country => country.continents.includes(continentname)).map((country, index) => (
                         <div key={index} className="country">
+
+
                             <Link to='/country' style={{ textDecoration: 'none' }} state={country}>
                                 <div className="card" style={{ width: '18rem', height: '400px' }}>
                                     <img src={country.flags.png} className="card-img-top" alt={`${country.name.common} flag`} />
@@ -43,10 +45,12 @@ function Continent() {
                                     <ul className="list-group list-group-flush">
                                         <li className="list-group-item">{country.name.common} ({country.tld})</li>
                                         <li className="list-group-item"><b>Capital city</b>: {country.capital}</li>
-                                        <li className="list-group-item"><b>Continent</b>: {country.continents.join(', ')}</li>
+                                        <li className="list-group-item"><b>Continent</b>: {country.continents}</li>
                                     </ul>
                                 </div>
                             </Link>
+
+                            
                         </div>
                     ))}
                 </div>

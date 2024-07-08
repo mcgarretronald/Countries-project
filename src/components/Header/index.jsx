@@ -24,7 +24,7 @@ function Navigationbar() {
                                 <Link to='/continents' state={'North America'} style={{textDecoration:'none'}}> <li><a className="dropdown-item" href="#">North America</a></li></Link>
                                 <Link to='/continents' state={'South America'} style={{textDecoration:'none'}}> <li><a className="dropdown-item" href="#">South America</a></li></Link>
                                 <Link to='/continents' state={'Asia'} style={{textDecoration:'none'}}> <li><a className="dropdown-item" href="#">Asia</a></li></Link>
-                                <Link to='/continents' state={'North America'} style={{textDecoration:'none'}}> <li><a className="dropdown-item" href="#">North America</a></li></Link>
+
                                 
                             </ul>
                         </li>
