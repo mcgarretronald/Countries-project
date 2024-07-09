@@ -12,6 +12,7 @@ function Countries() {
     const [error, setError] = useState(null);
     const link = 'https://restcountries.com/v3.1/all';
 
+    // Effect hook to fetch the countries data on component mount
     useEffect(() => {
         async function getCountries() {
             try {
@@ -25,25 +26,27 @@ function Countries() {
             } catch (error) {
                 console.error('Error fetching countries:', error);
                 setError(error);
-                setTimeout(() => {
-                    setIsLoaded(true);
-                }, 2000);
+                setIsLoaded(true);
             }
         }
         getCountries();
     }, []);
 
+    // Function to handle the search input change and update the search term state
     const handleSearch = (event) => {
         const searchTerm = event.target.value.toLowerCase();
         setSearchTerm(searchTerm);
 
+        // Filter the countries based on the search term
         const filteredCountries = countries.filter((country) =>
             country.name.common.toLowerCase().includes(searchTerm)
         );
 
+        // Update the showMessage state based on whether any country is found
         setShowMessage(filteredCountries.length === 0);
     };
 
+    // Filter the countries based on the search term
     const filteredCountries = countries.filter((country) =>
         country.name.common.toLowerCase().includes(searchTerm)
     );
@@ -54,6 +57,7 @@ function Countries() {
             <div className="content">
                 <h1 className="countriestitle">{isLoaded && !error ? "Countries" : null}</h1>
                 <div className="search-container">
+                    {/* Search input field */}
                     <input
                         type="text"
                         placeholder="Search"
@@ -61,14 +65,17 @@ function Countries() {
                         value={searchTerm}
                         onChange={handleSearch}
                         className="search-input"
-                        style={{ width: '60%', height: '40px',margin: '30px 20%', borderRadius: '5px', padding: '0 10px' }}
+                        style={{ width: '60%', height: '40px', margin: '30px 20%', borderRadius: '5px', padding: '0 10px' }}
                     />
                 </div>
                 <div className="countries">
+                    {/* Display a message if no country is found */}
                     {showMessage && <p>No country found</p>}
+                    {/* Display an error message if there is an error loading the countries */}
                     {error ? (
                         <p>Error loading countries. Please try again later.</p>
                     ) : isLoaded ? (
+                        // Map over the filtered countries and display a card for each country
                         filteredCountries.map((country, index) => (
                             <div key={index} className="country">
                                 <Link to='/country' style={{ textDecoration: 'none' }} state={country}>
@@ -87,6 +94,7 @@ function Countries() {
                             </div>
                         ))
                     ) : (
+                        // Display a loading indicator if the countries are still loading
                         <Commet color="#0dcaf0" size="large" text="" textColor="" />
                     )}
                 </div>
