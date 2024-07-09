@@ -9,7 +9,11 @@ function App() {
     <>
     <Navigationbar/>
     <div className="homepage">
+    <div class="container">
     <h1 className='homepage-title'>Country Wikipedia</h1>
+    </div>
+
+ 
    
 
     </div>

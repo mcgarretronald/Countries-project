@@ -5,7 +5,7 @@ import './index.css'
 import Countries from './components/Countries/index.jsx'
 import Continent from './components/Continents/index.jsx'
 import Country from './components/Country/index.jsx'
-
+import Border from './components/Border/index.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -27,8 +27,13 @@ const router = createBrowserRouter([
   },
   {
     path:'/country',
-    element:<Country/>
-  }
+   element:<Country/>,
+  },
+  {
+    path:'bodering-country',
+    element:<Border/>
+  }   
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
